@@ -48,7 +48,7 @@ PLOT_LOSS_HISTORY = True # boolean to plot or not plot the loss history after tr
 
 
 ######################## SAVING THE MODEL ########################
-CHEKPOINT_PATH = 'model_checkpoint' #path to save the model
+CHECKPOINT_PATH = 'model_checkpoint' #path to save the model
 CHECKPOINT_ITERATIONS = 10000 # save the model each CHECKPOINT_ITERATIONS iterations
 ##################################################################
 
@@ -579,7 +579,7 @@ def get_b_r(model ,x_b,current_values,discount_factor):
             
             stack = [] # stack the variables to feed the model
             for i in range(DIMENSIONS):
-                stack.append(variables[i][:,0]) # addd to list to stack, drop the second dimension
+                stack.append(variables[i][:,0]) # add to list to stack, drop the second dimension
             
             # Determine residual
             u =model((tf.stack(stack, axis=1)))
@@ -611,7 +611,7 @@ def get_b_r_n(model,x_b_n,current_values,discount_factor):
             
             stack = [] # stack the variables to feed the model
             for i in range(DIMENSIONS):
-                stack.append(variables[i][:,0]) # addd to list to stack, drop the second dimension
+                stack.append(variables[i][:,0]) # add to list to stack, drop the second dimension
             
             # Determine residual
             u = model((tf.stack(stack, axis=1)))
